@@ -14,7 +14,7 @@ import Socket from './network/socket';
 const baseURL = process.env.REACT_APP_BASE_URL;
 const tokenStorage = new TokenStorage();
 const authErrorEventBus = new AuthErrorEventBus();
-// const httpClient = new HttpClient(baseURL, authErrorEventBus); -> previous 예시 
+// const httpClient = new HttpClient(baseURL, authErrorEventBus); -> previous 예시
 const httpClient = new HttpClient(baseURL, authErrorEventBus);
 const authService = new AuthService(httpClient, tokenStorage);
 const socketClient = new Socket(baseURL, () => tokenStorage.getToken());
